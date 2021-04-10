@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Helmet Tweaks - [JDS] EFT Apparel</name>
+  <author>era</author>
+  <supportedVersions>
+    <li>1.2</li>
+  </supportedVersions>
+  <packageId>era.tweaked.etf_apparel</packageId>
+  <description>
+  This is a simple mod changing all of the helmets on the original ETF Apparel mod to only cover the ears and upper head instead of the full head. This menas you can use other apparel over it on the eyes and jaw slots, for example (see screenshot).
+
+  Goggles are from [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2243681587]TMC Equipment - Combat Assist Goggles[/url].
+
+  Load after [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2369524454]EFT Apparel[/url] and the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2417639307]Craftable EFT Apparel patch[/url] if using that.
+
+  Credits go to JangoDsoul for the creation of the original [JDS] EFT Apparel, of course.
+	</description>
+  <modDependencies>
+    <li>
+      <packageId>JangoDsoul.EFT.Apparel</packageId>
+      <displayName>[JDS] EFT Apparel</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2369524454</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>JangoDsoul.EFT.Apparel</li>
+  </loadAfter>
+</ModMetaData>
