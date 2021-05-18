@@ -39,4 +39,8 @@
         <None Include="C:\Users\gferreira\rimworld-mods\Armor Racks Continued\.editorconfig" />
     </ItemGroup>
 
+    <ItemGroup>
+              <Folder Include="Implementation\" />
+    </ItemGroup>
+
 </Project>
