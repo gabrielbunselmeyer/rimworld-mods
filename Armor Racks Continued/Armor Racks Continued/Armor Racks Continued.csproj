@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Armor_Racks_Continued</RootNamespace>
+        <RootNamespace>ArmorRacksContinued</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -37,10 +37,6 @@
 
     <ItemGroup>
         <None Include="C:\Users\gferreira\rimworld-mods\Armor Racks Continued\.editorconfig" />
-    </ItemGroup>
-
-    <ItemGroup>
-              <Folder Include="Implementation\" />
     </ItemGroup>
 
 </Project>
