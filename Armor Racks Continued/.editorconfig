@@ -12,7 +12,6 @@ insert_final_newline = true
 # Dotnet code style settings:
 [*.cs]
 charset = utf-8
-file_header_template = Copyright © 2021 PSPDFKit GmbH. All rights reserved.\n\nTHIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW\nAND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.\nUNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS SUBJECT TO CIVIL AND CRIMINAL PENALTIES.\nThis notice may not be removed from this file.
 
 # IDE0055: Fix formatting
 dotnet_diagnostic.IDE0055.severity = error
