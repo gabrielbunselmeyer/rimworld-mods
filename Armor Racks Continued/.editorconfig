@@ -1,0 +1,450 @@
+# top-most EditorConfig file
+root = true
+
+# Don't use tabs for indentation.
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Dotnet code style settings:
+[*.cs]
+charset = utf-8
+file_header_template = Copyright © 2021 PSPDFKit GmbH. All rights reserved.\n\nTHIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW\nAND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.\nUNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS SUBJECT TO CIVIL AND CRIMINAL PENALTIES.\nThis notice may not be removed from this file.
+
+# IDE0055: Fix formatting
+dotnet_diagnostic.IDE0055.severity = error
+
+# Sort using and Import directives with System.* appearing first
+dotnet_sort_system_directives_first = false
+dotnet_separate_import_directive_groups = false
+
+# Avoid "this." and "Me." if not necessary
+dotnet_style_qualification_for_field = false:refactoring
+dotnet_style_qualification_for_property = false:refactoring
+dotnet_style_qualification_for_method = false:refactoring
+dotnet_style_qualification_for_event = false:refactoring
+
+# Use language keywords instead of framework type names for type references
+dotnet_style_predefined_type_for_locals_parameters_members = true:error
+dotnet_style_predefined_type_for_member_access = true:error
+
+# Suggest more modern language features when available
+dotnet_style_object_initializer = true:error
+dotnet_style_collection_initializer = true:error
+dotnet_style_coalesce_expression = true:error
+dotnet_style_null_propagation = true:error
+dotnet_style_explicit_tuple_names = true:error
+
+# Non-private static fields are PascalCase
+dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.severity = error
+dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.symbols = non_private_static_fields
+dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.style = non_private_static_field_style
+
+dotnet_naming_symbols.non_private_static_fields.applicable_kinds = field
+dotnet_naming_symbols.non_private_static_fields.applicable_accessibilities = public, protected, internal, protected_internal, private_protected
+dotnet_naming_symbols.non_private_static_fields.required_modifiers = static
+
+dotnet_naming_style.non_private_static_field_style.capitalization = pascal_case
+
+# Non-private readonly fields are PascalCase
+dotnet_naming_rule.non_private_readonly_fields_should_be_pascal_case.severity = error
+dotnet_naming_rule.non_private_readonly_fields_should_be_pascal_case.symbols = non_private_readonly_fields
+dotnet_naming_rule.non_private_readonly_fields_should_be_pascal_case.style = non_private_readonly_field_style
+
+dotnet_naming_symbols.non_private_readonly_fields.applicable_kinds = field
+dotnet_naming_symbols.non_private_readonly_fields.applicable_accessibilities = public, protected, internal, protected_internal, private_protected
+dotnet_naming_symbols.non_private_readonly_fields.required_modifiers = readonly
+
+dotnet_naming_style.non_private_readonly_field_style.capitalization = pascal_case
+
+# Constants are PascalCase
+dotnet_naming_rule.constants_should_be_pascal_case.severity = error
+dotnet_naming_rule.constants_should_be_pascal_case.symbols = constants
+dotnet_naming_rule.constants_should_be_pascal_case.style = constant_style
+
+dotnet_naming_symbols.constants.applicable_kinds = field, local
+dotnet_naming_symbols.constants.required_modifiers = const
+
+dotnet_naming_style.constant_style.capitalization = pascal_case
+
+# Static fields are PascalCase
+dotnet_naming_rule.static_fields_should_be_pascal_case.severity = error
+dotnet_naming_rule.static_fields_should_be_pascal_case.symbols = static_fields
+dotnet_naming_rule.static_fields_should_be_pascal_case.style = static_field_style
+
+dotnet_naming_symbols.static_fields.applicable_kinds = field
+dotnet_naming_symbols.static_fields.required_modifiers = static
+
+dotnet_naming_style.static_field_style.capitalization = pascal_case
+
+# Instance fields are camelCase
+dotnet_naming_rule.instance_fields_should_be_camel_case.severity = error
+dotnet_naming_rule.instance_fields_should_be_camel_case.symbols = instance_fields
+dotnet_naming_rule.instance_fields_should_be_camel_case.style = instance_field_style
+
+dotnet_naming_symbols.instance_fields.applicable_kinds = field
+
+dotnet_naming_style.instance_field_style.capitalization = camel_case
+
+# Locals and parameters are camelCase
+dotnet_naming_rule.locals_should_be_camel_case.severity = error
+dotnet_naming_rule.locals_should_be_camel_case.symbols = locals_and_parameters
+dotnet_naming_rule.locals_should_be_camel_case.style = camel_case_style
+
+dotnet_naming_symbols.locals_and_parameters.applicable_kinds = parameter, local, private_method
+
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# Local functions are PamelCase
+dotnet_naming_rule.local_functions_should_be_pascal_case.severity = error
+dotnet_naming_rule.local_functions_should_be_pascal_case.symbols = local_functions
+dotnet_naming_rule.local_functions_should_be_pascal_case.style = local_function_style
+
+dotnet_naming_symbols.local_functions.applicable_kinds = local_function
+
+dotnet_naming_style.local_function_style.capitalization = pascal_case
+
+# By default, name items with PascalCase
+dotnet_naming_rule.members_should_be_pascal_case.severity = error
+dotnet_naming_rule.members_should_be_pascal_case.symbols = all_members
+dotnet_naming_rule.members_should_be_pascal_case.style = pascal_case_style
+
+dotnet_naming_symbols.all_members.applicable_kinds = *
+
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+# IDE0035: Remove unreachable code
+dotnet_diagnostic.IDE0035.severity = error
+
+# IDE0036: Order modifiers
+dotnet_diagnostic.IDE0036.severity = error
+
+# IDE0043: Format string contains invalid placeholder
+dotnet_diagnostic.IDE0043.severity = error
+
+# IDE0044: Make field readonly
+dotnet_diagnostic.IDE0044.severity = error
+
+# RS0016: Only enable if API files are present
+dotnet_public_api_analyzer.require_api_files = true
+
+# Newline settings
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_new_line_between_query_expression_clauses = true
+
+# Indentation preferences
+csharp_indent_block_contents = true
+csharp_indent_braces = false
+csharp_indent_case_contents = true
+csharp_indent_case_contents_when_block = true
+csharp_indent_switch_labels = true
+csharp_indent_labels = flush_left
+
+# Prefer "var" everywhere
+csharp_style_var_for_built_in_types = true:error
+csharp_style_var_when_type_is_apparent = true:error
+csharp_style_var_elsewhere = true:error
+
+# Prefer constructors to have a block body
+csharp_style_expression_bodied_constructors = false:none
+
+# Prefer property-like constructs and methods to have an expression-body
+csharp_style_expression_bodied_operators = true:none
+csharp_style_expression_bodied_methods = true:none
+csharp_style_expression_bodied_properties = true:none
+csharp_style_expression_bodied_indexers = true:none
+csharp_style_expression_bodied_accessors = true:none
+
+# Suggest more modern language features when available
+csharp_style_pattern_matching_over_is_with_cast_check = true:error
+csharp_style_pattern_matching_over_as_with_null_check = true:error
+csharp_style_inlined_variable_declaration = true:error
+csharp_style_throw_expression = true:error
+csharp_style_conditional_delegate_call = true:error
+
+# Space preferences
+csharp_space_after_cast = false
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_after_comma = true
+csharp_space_after_dot = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_after_semicolon_in_for_statement = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_around_declaration_statements = do_not_ignore
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_before_comma = false
+csharp_space_before_dot = false
+csharp_space_before_open_square_brackets = false
+csharp_space_before_semicolon_in_for_statement = false
+csharp_space_between_empty_square_brackets = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_declaration_name_and_open_parenthesis = false
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+csharp_space_between_square_brackets = false
+
+# Blocks are allowed
+csharp_prefer_braces = when_multiline:error
+csharp_preserve_single_line_blocks = true
+csharp_preserve_single_line_statements = true
+
+# ----------------------------------------------------
+# NULLABILITY RELATED RULES
+# ----------------------------------------------------
+
+# CS8601: Possible null reference assignment.
+dotnet_diagnostic.CS8601.severity = error
+
+# CS8602: Dereference of a possibly null reference.
+dotnet_diagnostic.CS8602.severity = error
+
+# CS8629: Nullable value type may be null.
+dotnet_diagnostic.CS8629.severity = error
+
+# CS8618: Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+dotnet_diagnostic.CS8618.severity = error
+
+# CS8603: Possible null reference return.
+dotnet_diagnostic.CS8603.severity = error
+
+# CS8604: Possible null reference argument.
+dotnet_diagnostic.CS8604.severity = error
+
+# CS8631: The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match constraint type.
+dotnet_diagnostic.CS8631.severity = error
+
+# CS8619: Nullability of reference types in value doesn't match target type.
+dotnet_diagnostic.CS8619.severity = error
+
+# CS8767: Nullability of reference types in type of parameter doesn't match implicitly implemented member (possibly because of nullability attributes).
+dotnet_diagnostic.CS8767.severity = error
+
+# CS8600: Converting null literal or possible null value to non-nullable type.
+dotnet_diagnostic.CS8600.severity = error
+
+# CS8765: Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
+dotnet_diagnostic.CS8765.severity = error
+
+# CS8622: Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+dotnet_diagnostic.CS8622.severity = error
+
+# CS8625: Cannot convert null literal to non-nullable reference type.
+dotnet_diagnostic.CS8625.severity = error
+
+# CS8620: Argument cannot be used for parameter due to differences in the nullability of reference types.
+dotnet_diagnostic.CS8620.severity = error
+
+# ----------------------------------------------------
+
+# CA1063: Implement IDisposable Correctly
+dotnet_diagnostic.CA1063.severity = error
+
+# CA1816: Dispose methods should call SuppressFinalize
+dotnet_diagnostic.CA1816.severity = error
+
+# CA1822: Mark members as static
+dotnet_diagnostic.CA1822.severity = error
+
+# IDE0066: Convert switch statement to expression
+dotnet_diagnostic.IDE0066.severity = error
+
+# CA1001: Types that own disposable fields should be disposable
+dotnet_diagnostic.CA1001.severity = error
+
+# CA1002: Do not expose generic lists
+dotnet_diagnostic.CA1002.severity = error
+
+# CA1011: Consider passing base types as parameters
+dotnet_diagnostic.CA1011.severity = error
+
+# CA1061: Do not hide base class methods
+dotnet_diagnostic.CA1061.severity = error
+
+# CA1502: Avoid excessive complexity
+dotnet_diagnostic.CA1502.severity = error
+
+# CA1505: Avoid unmaintainable code
+dotnet_diagnostic.CA1505.severity = error
+
+# CA1506: Avoid excessive class coupling
+dotnet_diagnostic.CA1506.severity = error
+
+# IDE0063: Use simple 'using' statement
+dotnet_diagnostic.IDE0063.severity = error
+
+# CA1806: Do not ignore method results
+dotnet_diagnostic.CA1806.severity = error
+
+# CA1060: Move pinvokes to native methods class
+dotnet_diagnostic.CA1060.severity = error
+
+# SA1107: Single statement per line
+dotnet_diagnostic.SA1107.severity = error
+
+# SA1501: Single statement per line
+dotnet_diagnostic.SA1501.severity = error
+
+# IDE0052: Remove unread private members
+dotnet_diagnostic.IDE0052.severity = error
+
+# CA1008: Enums should have zero value
+dotnet_diagnostic.CA1008.severity = error
+
+# CA1013: Overload operator equals on overloading add and subtract
+dotnet_diagnostic.CA1013.severity = error
+
+# CA1024: Use properties where appropriate
+dotnet_diagnostic.CA1024.severity = error
+
+# CA1033: Interface methods should be callable by child types
+dotnet_diagnostic.CA1033.severity = error
+
+# CA1036: Override methods on comparable types
+dotnet_diagnostic.CA1036.severity = error
+
+# CA1038: Enumerators should be strongly typed
+dotnet_diagnostic.CA1038.severity = error
+
+# CA1039: Lists are strongly typed
+dotnet_diagnostic.CA1039.severity = error
+
+# CA1041: Provide ObsoleteAttribute message
+dotnet_diagnostic.CA1041.severity = error
+
+# CA1044: Properties should not be write only
+dotnet_diagnostic.CA1044.severity = error
+
+# CA1047: Do not declare protected members in sealed types
+dotnet_diagnostic.CA1047.severity = error
+
+# CA1048: Do not declare virtual members in sealed types
+dotnet_diagnostic.CA1048.severity = error
+
+# CA1049: Types that own native resources should be disposable
+dotnet_diagnostic.CA1049.severity = error
+
+# CA1051: Do not declare visible instance fields
+dotnet_diagnostic.CA1051.severity = error
+
+# CA1052: Static holder types should be sealed
+dotnet_diagnostic.CA1052.severity = error
+
+# CA1053: Static holder types should not have constructors
+dotnet_diagnostic.CA1053.severity = error
+
+# CA1064: Exceptions should be public
+dotnet_diagnostic.CA1064.severity = error
+
+# CA1702: Compound words should be cased correctly
+dotnet_diagnostic.CA1702.severity = error
+
+# CA1707: Identifiers should not contain underscores
+dotnet_diagnostic.CA1707.severity = error
+
+# CA1708: Identifiers should differ by more than case
+dotnet_diagnostic.CA1708.severity = error
+
+# Simplify name (IDE0001)
+dotnet_diagnostic.IDE0001.severity = error
+
+# Simplify member access (IDE0002)
+dotnet_diagnostic.IDE0002.severity = error
+
+# this preferences (IDE0003)
+dotnet_diagnostic.IDE0003.severity = error
+
+# Remove unnecessary cast (IDE0004)
+dotnet_diagnostic.IDE0004.severity = error
+
+# Remove unnecessary import (IDE0005)
+dotnet_diagnostic.IDE0005.severity = error
+
+# Use throw expressions (IDE0016)
+dotnet_diagnostic.IDE0016.severity = error
+csharp_style_throw_expression     = true:error
+
+# Use pattern matching to avoid 'as' followed by a 'null' check (IDE0019)
+dotnet_diagnostic.IDE0019.severity = error
+csharp_style_pattern_matching_over_as_with_null_check = true:error
+
+# Use pattern matching to avoid 'is' check followed by a cast (IDE0020)
+dotnet_diagnostic.IDE0020.severity = error
+dotnet_diagnostic.IDE0038.severity = error
+csharp_style_pattern_matching_over_is_with_cast_check = true:error
+
+# Use coalesce expression
+dotnet_diagnostic.IDE0029.severity = error
+dotnet_diagnostic.IDE0030.severity = error
+dotnet_style_coalesce_expression  = true:error
+
+# Use null propagation (IDE0031)
+dotnet_diagnostic.IDE0031.severity = error
+dotnet_style_null_propagation     = true:error
+
+# Explicit tuple names
+dotnet_diagnostic.IDE0033.severity = error
+dotnet_style_explicit_tuple_names = true:error
+
+# Prefer simple default expression
+dotnet_diagnostic.IDE0034.severity = error
+csharp_prefer_simple_default_expression = true:error
+
+# Prefer inferred tuple names
+dotnet_diagnostic.IDE0037.severity = error
+dotnet_style_prefer_inferred_tuple_names = true:error
+
+# Prefer local over anonymous function
+dotnet_diagnostic.IDE0039.severity = error
+csharp_style_pattern_local_over_anonymous_function = true:error
+
+# Require accessibility modifiers
+dotnet_diagnostic.IDE0040.severity = error
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:error
+
+# Prefer is null check over equality method
+dotnet_diagnostic.IDE0041.severity = error
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:error
+
+# Add readonly modifier
+dotnet_diagnostic.IDE0044.severity = error
+dotnet_style_readonly_field       = true:error
+
+# Prefer compound assignment
+dotnet_diagnostic.IDE0054.severity = error
+dotnet_diagnostic.IDE0074.severity = error
+dotnet_style_prefer_compound_assignment = true:error
+
+# Prefer index operator
+dotnet_diagnostic.IDE0056.severity = error
+csharp_style_prefer_index_operator= true:error
+
+# Prefer range operator
+dotnet_diagnostic.IDE0057.severity = error
+csharp_style_prefer_range_operator= true:error
+
+# Prefer simplified interpolation
+dotnet_diagnostic.IDE0071.severity = error
+dotnet_style_prefer_simplified_interpolation = true:error
+
+# Prefer simplified boolean expressions
+dotnet_diagnostic.IDE0075.severity = error
+dotnet_style_prefer_simplified_boolean_expressions = true:error
+
+# Prefer pattern matching
+dotnet_diagnostic.IDE0078.severity = error
+csharp_style_prefer_pattern_matching = true:error
+
+# Use pattern matching (not operator)
+dotnet_diagnostic.IDE0083.severity = error
+csharp_style_prefer_not_pattern   = true:error
