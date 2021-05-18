@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <JobDef>
-        <defName>ArmorRacks_JobWearRack</defName>
-        <driverClass>ArmorRacks.Jobs.JobDriverWearRack</driverClass>
+        <defName>ArmorRacks_JobWearFromRack</defName>
+        <driverClass>ArmorRacks.Jobs.JobDriverWearFromRack</driverClass>
         <reportString>Equipping from armor rack.</reportString>
         <suspendable>false</suspendable>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
